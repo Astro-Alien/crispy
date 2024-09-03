@@ -26,9 +26,22 @@ export default class GenerativeArt extends crs.classes.BindableElement {
 
     async #initialiseCanvas() {
         const context = this.canvas.getContext("2d");
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        this.canvas.width = window.innerWidth * 0.5;
+        this.canvas.height = window.innerHeight * 0.5;
 
-        context.fillRect(10, 10, 50, 50);
+        context.fillStyle = "purple";
+        context.strokeStyle = "yellow";
+        context.lineWidth = 20;
+        context.lineCap = "round";
+
+        context.fillRect(50, 50, 50, 50);
+
+        let size = 200;
+
+        //create a line on the canvas
+        context.beginPath();
+        context.moveTo( this.canvas.width/2, this.canvas.height/2);
+        context.lineTo( size, this.canvas.height/2);
+        context.stroke();
     }
 }
