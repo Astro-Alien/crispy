@@ -8,6 +8,10 @@
             "view": "welcome"
         },
         {
+            "title": "Generative Art",
+            "view": "generative-art"
+        },
+        {
             "title": "About",
             "view": "about"
         }
