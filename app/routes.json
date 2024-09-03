@@ -12,6 +12,10 @@
             "view": "generative-art"
         },
         {
+            "title": "Teleprompter",
+            "view": "teleprompter"
+        },
+        {
             "title": "About",
             "view": "about"
         }
