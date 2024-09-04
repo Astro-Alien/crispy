@@ -12,9 +12,10 @@
         </p>
     </div>
 </div>
+<textarea id="story" name="story" rows="5" cols="33" ref="textArea"></textarea>
 <div class="controls">
-    <button onclick="play()">Play</button>
-    <button onclick="pause()">Pause</button>
+    <button click.call="play()">Play</button>
+    <button click.call="pause()">Pause</button>
     <label for="speed">Speed:</label>
-    <input type="range" id="speed" min="1" max="10" value="5" oninput="adjustSpeed(this.value)">
+    <input type="number" id="speed" step="0.25" min="0.25" max="10" change.setvalue="updateSpeed = element.value">
 </div>
