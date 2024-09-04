@@ -29,7 +29,7 @@ export default class Teleprompter extends crs.classes.BindableElement {
 
     async connectedCallback() {
         await super.connectedCallback();
-        this.dataset.position = "250%";
+        this.dataset.position = "350%";
         globalThis.addEventListener("keydown", this.#textAreaHandler);
     }
 
@@ -98,7 +98,7 @@ export default class Teleprompter extends crs.classes.BindableElement {
         this.dataset.position = value;
 
         if (value <= -100) {
-            this.dataset.position = "250%";
+            this.dataset.position = "350%";
         }
     }
 

@@ -1,5 +1,5 @@
 :host {
-    --top: 250%;
+    --top: 350%;
 
     font-family: Arial, sans-serif;
     background-color: #222;
@@ -28,7 +28,7 @@
     left: 0;
     width: 100%;
     line-height: 1.6;
-    transform: translateY(var(--top, 250%));
+    transform: translateY(var(--top));
 }
 
 .controls {
