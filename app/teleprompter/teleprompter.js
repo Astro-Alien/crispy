@@ -29,7 +29,7 @@ export default class Teleprompter extends crs.classes.BindableElement {
 
     async connectedCallback() {
         await super.connectedCallback();
-        this.dataset.position = "350%";
+        this.dataset.position = "250%";
         globalThis.addEventListener("keydown", this.#textAreaHandler);
     }
 
@@ -42,17 +42,6 @@ export default class Teleprompter extends crs.classes.BindableElement {
         cancelAnimationFrame(this.#requestId);
     }
 
-    async play() {
-        if (this.#scrolling === false) {
-            this.#scrolling = true;
-            await this.#scroll();
-        }
-    }
-
-    async pause() {
-        this.#scrolling = false;
-        cancelAnimationFrame(this.#requestId);
-    }
     async #populateText(text) {
         //Todo: sanitize the input
         this.text.innerHTML = text;
@@ -73,7 +62,7 @@ export default class Teleprompter extends crs.classes.BindableElement {
             await this.#HotKeyActions[combination]();
         }
     }
-
+    
     async #scroll() {
         if (this.#scrolling === false) return;
 
@@ -82,7 +71,7 @@ export default class Teleprompter extends crs.classes.BindableElement {
         const newTopValue = topValue - this.#speed;
         await this.#setPositionProperty(newTopValue);
 
-        if (newTopValue <= -100) {
+        if (newTopValue <= -150) {
             this.#scrolling = false;
             return;
         }
@@ -97,12 +86,25 @@ export default class Teleprompter extends crs.classes.BindableElement {
         this.style.setProperty("--top", valueInPercentage);
         this.dataset.position = value;
 
-        if (value <= -100) {
-            this.dataset.position = "350%";
+        if (value <= -150) {
+            this.dataset.position = "250%";
         }
     }
 
     async updateSpeedChanged(value) {
         this.#speed = parseFloat(value);
+    }
+
+
+    async play() {
+        if (this.#scrolling === false) {
+            this.#scrolling = true;
+            await this.#scroll();
+        }
+    }
+
+    async pause() {
+        this.#scrolling = false;
+        cancelAnimationFrame(this.#requestId);
     }
 }
