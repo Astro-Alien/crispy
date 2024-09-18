@@ -1,0 +1,9 @@
+{
+    "name": "",
+    "version": "0.0.8",
+    "description": "Application starter template",
+    "scripts": {
+        "run": "caddy run"
+    }
+}
+

@@ -43,8 +43,8 @@ export default class Teleprompter extends crs.classes.BindableElement {
     }
 
     async #populateText(text) {
-        //Todo: sanitize the input
-        this.text.innerHTML = text;
+        const formattedText = text.replace(/\n/g, "<br>");
+        this.text.innerHTML = formattedText;
     }
 
     async #hideTextArea(event) {

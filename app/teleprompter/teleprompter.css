@@ -23,6 +23,10 @@
     background-color: #000;
 }
 
+#speed {
+    margin-left: 0.25rem;
+}
+
 #text {
     position: absolute;
     left: 0;
@@ -55,9 +59,11 @@ textarea {
     font-size: 0.8rem;
     letter-spacing: 1px;
 }
+
 p {
     font-size: 1.5em;
 }
+
 textarea {
     padding: 10px;
     width: 80%;
@@ -68,9 +74,4 @@ textarea {
     box-sizing: border-box;
     box-shadow: var(--drop-shadow-large);
     margin-top: var(--margin);
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
 }
