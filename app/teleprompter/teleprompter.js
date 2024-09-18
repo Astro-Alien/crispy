@@ -62,7 +62,7 @@ export default class Teleprompter extends crs.classes.BindableElement {
             await this.#HotKeyActions[combination]();
         }
     }
-    
+
     async #scroll() {
         if (this.#scrolling === false) return;
 
