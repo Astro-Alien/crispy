@@ -43,8 +43,8 @@ export default class Teleprompter extends crs.classes.BindableElement {
     }
 
     async #populateText(text) {
-        const formattedText = text.replace(/\n/g, "<br>");
-        this.text.innerHTML = formattedText;
+        const sanitizedText = await sanitizeInput(text);
+        this.text.innerHTML = sanitizedText.replace(/\n/g, "<br>");
     }
 
     async #hideTextArea(event) {
@@ -107,4 +107,14 @@ export default class Teleprompter extends crs.classes.BindableElement {
         this.#scrolling = false;
         cancelAnimationFrame(this.#requestId);
     }
+}
+
+async function sanitizeInput(text) {
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#x27;")
+        .replace(/\//g, "&#x2F;");
 }

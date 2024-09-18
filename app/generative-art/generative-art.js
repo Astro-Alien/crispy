@@ -36,7 +36,7 @@ export default class GenerativeArt extends crs.classes.BindableElement {
 
         context.fillRect(50, 50, 50, 50);
 
-        let size = 200;
+        let size = 100;
 
         //create a line on the canvas
         context.beginPath();
