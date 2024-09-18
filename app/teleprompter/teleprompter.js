@@ -3,7 +3,7 @@ const ExclusionWords = Object.freeze({
 });
 
 export default class Teleprompter extends crs.classes.BindableElement {
-    #speed = 0.25;
+    #speed = 0.1;
     #scrolling = false;
     #textAreaHandler = this.#hideTextArea.bind(this);
     #requestId;
