@@ -16,6 +16,10 @@
             "view": "teleprompter"
         },
         {
+            "title": "Messenger App",
+            "view": "messenger-app"
+        },
+        {
             "title": "About",
             "view": "about"
         }
