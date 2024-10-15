@@ -54,6 +54,7 @@ export default class MessengerApp extends crs.classes.BindableElement {
         try {
             const response = await fetch(url, {
                 method: "GET",
+                mode: "no-cors",
                 headers: {
                     "Content-Type": "application/json"
                 }

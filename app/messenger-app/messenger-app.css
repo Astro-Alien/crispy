@@ -1,13 +1,99 @@
 :host {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background: yellow;
+    padding: 1rem;
 }
 
 #info {
     width: 50%;
     height: 25rem;
     margin-top: 0.5rem;
+}
+
+#content-container {
+    height: 100%;
+    width: 100%;
+    background: var(--cl-li-hover);
+}
+
+#header-content-container {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    justify-content: center;
+    background: var(--grey-s2);
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+#input-actions-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    background: var(--grey-s2);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+#input-actions-container input{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: sans-serif;
+    box-shadow: var(--drop-shadow-large);
+    outline: none;
+}
+
+input:focus{
+    border: var(--blue);
+}
+
+#input-actions-container button {
+    height: 2.5rem;
+    width: 3rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: var(--drop-shadow-large);
+    background: var(--cl-li-hover);
+}
+
+#input-actions-container button:hover {
+    background: var(--cl-bg);
+}
+
+#header-content-container h2 {
+    width: 100%;
+    margin: 0;
+    padding-left: 0.5rem;
+    font-family: sans-serif;
+
+}
+
+#header-content-container h2,
+#input-actions-container input,
+#input-actions-container button {
+    color: var(--grey-s1);
+    font-family: sans-serif;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem 1fr 4rem;
+    width: 50%;
+    height: 100%;
+    border-radius: 1rem;
 }
